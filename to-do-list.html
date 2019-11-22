@@ -1,0 +1,66 @@
+<html>
+<head>
+  <style>
+  input 
+  {
+font-size: 30px;
+border-radius: 10px;
+  }
+    body
+    {
+      
+      margin-top: 100px;
+    }
+    button
+    {
+        font-size: 30px;
+        border-radius: 40px;
+        font-family: cursive;
+      
+    }
+    button:hover 
+    {
+    
+      background-color: #31ad6c; 
+      transition: 0.5s;
+      border-color: transparent;
+
+    }
+       .abc
+       {
+        padding: 150px;
+        margin: 30px;
+        background-color: #93f5c2;
+        border-radius: 100px;
+       }
+       #para 
+       {
+        font-size: 20px;
+        font-weight: 20px;
+       }
+       h1
+       {
+        font-size: 50px;
+           font-family: fantasy;
+       }
+    </style>
+</head>
+<body>
+   <div class="abc">
+  <center>
+   <h1><u> To-do List </u></h1>
+  <input type="text" id="inp" placeholder="Enter your text"><br/><br/>
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <button id="corners" onclick="fun()">Submit</button><br/><br/>
+  <div id="para"></div>
+</div>
+  </center>
+  <script>
+    var x = document.getElementById('inp');
+    function fun()
+    {
+      var y = document.getElementById('para');
+      y.textContent=x.value;
+    }
+  </script>
+</body>
+</html>
