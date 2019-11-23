@@ -3,22 +3,30 @@
   <style>
   input 
   {
-font-size: 30px;
-border-radius: 10px;
+	font-size: 30px;
+	border-radius: 10px;
   }
     body
     {
       
       margin-top: 100px;
     }
-    button
+    ul li:hover
+    {
+    	background: #6ab073;
+    }
+    ul {
+    	list-style: none;
+    	
+    }
+    .btn
     {
         font-size: 30px;
         border-radius: 40px;
         font-family: cursive;
       
     }
-    button:hover 
+    .btn:hover 
     {
     
       background-color: #31ad6c; 
@@ -35,32 +43,52 @@ border-radius: 10px;
        }
        #para 
        {
-        font-size: 20px;
+        font-size: 45px;
         font-weight: 20px;
        }
-       h1
+       h2
        {
-        font-size: 50px;
+        	font-size: 50px;
            font-family: fantasy;
        }
     </style>
 </head>
 <body>
    <div class="abc">
-  <center>
-   <h1><u> To-do List </u></h1>
-  <input type="text" id="inp" placeholder="Enter your text"><br/><br/>
- &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <button id="corners" onclick="fun()">Submit</button><br/><br/>
-  <div id="para"></div>
+   	<center>
+  <h2 style="margin:5px">To-Do List</h2><br/>
+  <input type="text" id="inp" placeholder="Enter Your Text"><br/><br/>
+  <button onclick="fun()" class="btn">Submit</button>
+<ul id="para">
+</ul>
+</center>
 </div>
-  </center>
-  <script>
-    var x = document.getElementById('inp');
-    function fun()
-    {
-      var y = document.getElementById('para');
-      y.textContent=x.value;
-    }
-  </script>
+<script>
+  var l = document.getElementsByTagName("li");
+  var i;
+  for (i = 0; i < l.length; i++) 
+  {
+    var s = document.createElement("BUTTON");
+    var d = document.createTextNode("Delete");
+    s.className = "close";
+   	s.appendChild(d);
+    l[i].appendChild(s);
+  }
+  function fun() 
+  {
+    var li = document.createElement("li");
+    var n = document.getElementById("inp").value;
+    var t = document.createTextNode(n);
+    li.appendChild(t);
+    document.getElementById("para").appendChild(li);
+    document.getElementById("inp").value = "";
+    var m = document.createElement("BUTTON");
+    var y = document.createTextNode("Delete");
+    m.className = "close";
+    m.appendChild(y);
+    li.appendChild(m);
+ }  
+
+</script>
 </body>
 </html>
